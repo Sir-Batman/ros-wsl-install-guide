@@ -11,7 +11,7 @@ Adapted and tested for Ubuntu 16.04 and ROS Kinetic running on Windows 10.
 
 ## Install Windows Subsystem for Linux
 
-This section is based on Guide [Here](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+This section is based on the Microsoft guide [Here](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
 1. Open PowerShell as Administrator and run: 
 
@@ -23,11 +23,11 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 ## Install Ubuntu Distro
 
-1. Open the Microsoft Store and choose Ubuntu 16.04. Link [here](https://www.microsoft.com/store/apps/9pjn388hp8c9)
+1. Open the Microsoft Store and choose Ubuntu 16.04. The link to Ubuntu 16.04 is provided [here](https://www.microsoft.com/store/apps/9pjn388hp8c9) for convenience.
 
 2. Press `Get`
 
-3. Initialize the distro by following the instruction from [here](https://docs.microsoft.com/en-us/windows/wsl/initialize-distro) copied below
+3. Initialize the distro by following the instructions from [here](https://docs.microsoft.com/en-us/windows/wsl/initialize-distro) copied below
 
 4. Launch the distro from the Microsoft Store page and wait for it to finish installing...
 
@@ -74,14 +74,14 @@ b) Under the `View` Tab, under the `Show/hide` heading,  Check the `Hidden Items
 
 ## Install ROS
 
+Installing ROS is mostly the same as the default instructions found [here](http://wiki.ros.org/kinetic/Installation/Ubuntu) with the exception of adding keys (step 2 below).
+
 1. Setup your computer to accept software from packages.ros.org. 
 
 ```bash
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 ```
-
-
-2. Add Keys (Note this differs from the instructions page because dirmngr is broken per [this](https://github.com/Microsoft/WSL/issues/3286) Github issue.)
+2. Add Keys (Note this differs from the instructions page because `dirmngr` is broken per [this](https://github.com/Microsoft/WSL/issues/3286) Github issue.)
 
 ```bash
 curl -sL "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x<INSERT KEY HERE>"  | sudo apt-key add
@@ -100,7 +100,7 @@ As of the writing of this guide, this key is `C1CF6E31E6BADE8868B172B4F42ED6FBAB
 curl -sL "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xC1CF6E31E6BADE8868B172B4F42ED6FBAB17C654"  | sudo apt-key add
 ```
 
-3. Run:
+3. Update the list of repositories, install the full version of ROS Kinetic, and setup `rosdep` for installing system dependencies:
 ```bash
 sudo apt update
 sudo apt install -y ros-kinetic-desktop-full
@@ -108,7 +108,7 @@ sudo rosdep init
 rosdep update
 ```
 
-4. Source ROS Melodic so that it can be accessed in this window:
+4. Source ROS Kinetic so that it can be accessed in this window:
 
 ```bash
 source /opt/ros/kinetic/setup.bash
@@ -142,16 +142,18 @@ source ~/.bashrc
 
 3. Launch VcXsrv from the start menu. All default settings work except uncheck `Native opengl`.
 
-## Turtlebot
+## Installing Turtlebot
 
 1. Install the turtlebot and its related packages
 ```bash
 sudo apt install ros-kinetic-turtlebot
-sudo apt install ros-kinetic-turtlebot-* # This will install all packages, you may only need a subset.
+sudo apt install ros-kinetic-turtlebot-* # This will install all packages, you may only need a subset of these packages depending on what you are doing.
 source ~/.bashrc
 ```
 
-2. Bring up Turtlebot in stage
+2. Bring up Turtlebot in stage to check everything is working.
 ```bash
 roslaunch turtlebot_stage turtlebot_in_stage.launch
 ```
+
+3. You should be able to drive the Turtlebot around using 2D nav goals through the RViz interface.
