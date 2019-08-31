@@ -11,7 +11,7 @@ Adapted and tested for Ubuntu 16.04 and ROS Kinetic running on Windows 10.
 
 ## Install Windows Subsystem for Linux
 
-Guide [Here](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+This section is based on Guide [Here](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
 1. Open PowerShell as Administrator and run: 
 
@@ -65,10 +65,11 @@ Per this [post](https://askubuntu.com/questions/759880/where-is-the-ubuntu-file-
 
 Your `/home` or `~` directory will be located in `C:\Users\<username>\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home`. This will let you open files/folder from the Windows-side outside the shell.
 
-If you do not see the `AppData` folder on Windows, you will need to enable `Hidden items` by 
+If you do not see the `AppData` folder on Windows, you will need to enable `Hidden items` by:
 
-  a. Open a Windows Explorer window
-  b. Under the `View` Tab, under the `Show/hide` heading,  Check the `Hidden Items` checkbox.
+a) Open a Windows Explorer window
+
+b) Under the `View` Tab, under the `Show/hide` heading,  Check the `Hidden Items` checkbox.
 
 
 ## Install ROS
