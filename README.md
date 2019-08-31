@@ -62,7 +62,9 @@ Pasting into the shell can be done by right-clicking the shell.
 There are some references to an "Enable Ctrl-Shift-C/V" for copy and paste option found [here](https://devblogs.microsoft.com/commandline/copy-and-paste-arrives-for-linuxwsl-consoles/), but it was not available on my version. I would suggest trying to see if these instructions work for your version. 
 
 a) Right-click the top bar on the shell window.
+
 b) Go to `Properties`
+
 c) Under the `Options` tab, check the box `Use Ctrl+Shift+C/V as Copy/Paste`.
 
 3. Locating the Linux folder in Windows Explorer. 
