@@ -1,8 +1,10 @@
-# Windows ROS Turtlebot Installation Instructions
+# ROS on Windows Installation Instructions
 
 By Scott Chow
 
-Last Updated: August 30, 2019
+Last Updated: August 31st, 2019
+
+This guide takes you through the installation process of Ubuntu 16.04 and ROS Kinetic on Windows 10 using Windows Subsystem for Linux.
 
 Overall guide based heavily on the tutorial found [here](https://janbernloehr.de/2017/06/10/ros-windows).
 Adapted and tested for Ubuntu 16.04 and ROS Kinetic running on Windows 10.
@@ -57,7 +59,11 @@ Restart the client for the change to take effect.
 
 Pasting into the shell can be done by right-clicking the shell. 
 
-There are some references to an "Enable Ctrl-Shift-C/V" for copy and paste option found [here](https://devblogs.microsoft.com/commandline/copy-and-paste-arrives-for-linuxwsl-consoles/), but it was not available on my version. I would suggest trying to see if the option linked above is available in your version.
+There are some references to an "Enable Ctrl-Shift-C/V" for copy and paste option found [here](https://devblogs.microsoft.com/commandline/copy-and-paste-arrives-for-linuxwsl-consoles/), but it was not available on my version. I would suggest trying to see if these instructions work for your version. 
+
+a) Right-click the top bar on the shell window.
+b) Go to `Properties`
+c) Under the `Options` tab, check the box `Use Ctrl+Shift+C/V as Copy/Paste`.
 
 3. Locating the Linux folder in Windows Explorer. 
 
