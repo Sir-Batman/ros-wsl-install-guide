@@ -2,7 +2,7 @@
 
 By Scott Chow
 
-Last Updated: August 31st, 2019
+Last Updated: August 31, 2019
 
 This guide takes you through the installation process of Ubuntu 16.04 and ROS Kinetic on Windows 10 using Windows Subsystem for Linux.
 
