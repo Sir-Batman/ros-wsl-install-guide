@@ -35,7 +35,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 6. You are now done installing Ubuntu
 
-## Optional Quality of Life Tips and Tricks.
+## Optional Quality of Life Tips and Tricks
 
 Here are some Tips and Tricks that are optional, but will make life much easier to know how to do.
 
@@ -53,7 +53,11 @@ echo "set bell-style visible" >> ~/.inputrc
 
 Restart the client for the change to take effect.
 
-2. Copy and Paste: Pasting into the shell can be done by right-clicking the shell. There are some references to an "Enable Ctrl-Shift-C/V" for copy and paste option found [here](https://devblogs.microsoft.com/commandline/copy-and-paste-arrives-for-linuxwsl-consoles/), but it was not available on my version. I would suggest trying to see if the option is available first.
+2. Copy and Paste
+
+Pasting into the shell can be done by right-clicking the shell. 
+
+There are some references to an "Enable Ctrl-Shift-C/V" for copy and paste option found [here](https://devblogs.microsoft.com/commandline/copy-and-paste-arrives-for-linuxwsl-consoles/), but it was not available on my version. I would suggest trying to see if the option linked above is available in your version.
 
 3. Locating the Linux folder in Windows Explorer. 
 
@@ -61,10 +65,10 @@ Per this [post](https://askubuntu.com/questions/759880/where-is-the-ubuntu-file-
 
 Your `/home` or `~` directory will be located in `C:\Users\<username>\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home`. This will let you open files/folder from the Windows-side outside the shell.
 
-If you do not see the `AppData` folder on Windows, you will need to enable Hidden items by 
+If you do not see the `AppData` folder on Windows, you will need to enable `Hidden items` by 
 
 1. Open a Windows Explorer window
-2. Under the `View` Tab, under the `Show/hide heading`,  Check the `Hidden Items` checkbox.
+2. Under the `View` Tab, under the `Show/hide` heading,  Check the `Hidden Items` checkbox.
 
 
 ## Install ROS
