@@ -35,7 +35,11 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 6. You are now done installing Ubuntu
 
-7. (Optional) Disable Windows bell in shell. Windows plays a really annoying bell during tab completion as discussed [here](https://github.com/Microsoft/WSL/issues/715#issuecomment-344888457). One can disable this bell by the following command:
+## Optional Quality of Life Tips and Tricks.
+
+Here are some Tips and Tricks that are optional, but will make life much easier to know how to do.
+
+1. Disable Windows bell in shell. Windows plays an annoying bell during tab completion as discussed [here](https://github.com/Microsoft/WSL/issues/715#issuecomment-344888457). One can disable this bell by the following command:
 
 ```bash
 echo "set visualbell" >> ~/.vimrc
@@ -49,6 +53,20 @@ echo "set bell-style visible" >> ~/.inputrc
 
 Restart the client for the change to take effect.
 
+2. Copy and Paste: Pasting into the shell can be done by right-clicking the shell. There are some references to an "Enable Ctrl-Shift-C/V" for copy and paste option found [here](https://devblogs.microsoft.com/commandline/copy-and-paste-arrives-for-linuxwsl-consoles/), but it was not available on my version. I would suggest trying to see if the option is available first.
+
+3. Locating the Linux folder in Windows Explorer. 
+
+Per this [post](https://askubuntu.com/questions/759880/where-is-the-ubuntu-file-system-root-directory-in-windows-subsystem-for-linux-an), the `/` directory in the Linux shell can be found by navigating to `C:\Users\<username>\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState` in Windows Explorer. 
+
+Your `/home` or `~` directory will be located in `C:\Users\<username>\AppData\Local\Packages\CanonicalGroupLimited.UbuntuonWindows_79rhkp1fndgsc\LocalState\rootfs\home`. This will let you open files/folder from the Windows-side outside the shell.
+
+If you do not see the `AppData` folder on Windows, you will need to enable Hidden items by 
+
+1. Open a Windows Explorer window
+2. Under the `View` Tab, under the `Show/hide heading`,  Check the `Hidden Items` checkbox.
+
+
 ## Install ROS
 
 1. Setup your computer to accept software from packages.ros.org. 
@@ -57,7 +75,6 @@ Restart the client for the change to take effect.
 sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
 ```
 
-Pro-tip: Pasting into the shell can be done by right-clicking the shell. There are some references to an "Enable Ctrl-Shift-C/V" for copy and paste option found [here](https://devblogs.microsoft.com/commandline/copy-and-paste-arrives-for-linuxwsl-consoles/), but it was not available on my version. I would suggest trying to see if the option is available first.
 
 2. Add Keys (Note this differs from the instructions page because dirmngr is broken per [this](https://github.com/Microsoft/WSL/issues/3286) Github issue.)
 
