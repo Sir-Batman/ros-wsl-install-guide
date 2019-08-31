@@ -67,8 +67,8 @@ Your `/home` or `~` directory will be located in `C:\Users\<username>\AppData\Lo
 
 If you do not see the `AppData` folder on Windows, you will need to enable `Hidden items` by 
 
-1. Open a Windows Explorer window
-2. Under the `View` Tab, under the `Show/hide` heading,  Check the `Hidden Items` checkbox.
+  a. Open a Windows Explorer window
+  b. Under the `View` Tab, under the `Show/hide` heading,  Check the `Hidden Items` checkbox.
 
 
 ## Install ROS
