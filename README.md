@@ -4,10 +4,10 @@ By Scott Chow
 
 Last Updated: August 31, 2019
 
-This guide takes you through the installation process of Ubuntu 16.04 and ROS Kinetic on Windows 10 using Windows Subsystem for Linux.
+This guide takes you through the installation process of Ubuntu 18.04 and ROS Kinetic on Windows 10 using Windows Subsystem for Linux.
 
 Overall guide based heavily on the tutorial found [here](https://janbernloehr.de/2017/06/10/ros-windows).
-Adapted and tested for Ubuntu 16.04 and ROS Kinetic running on Windows 10.
+Adapted and tested for Ubuntu 18.04 and ROS Kinetic running on Windows 10.
 
 ---
 
@@ -25,7 +25,7 @@ Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-L
 
 ## Install Ubuntu Distro
 
-1. Open the Microsoft Store and choose Ubuntu 16.04. The link to Ubuntu 16.04 is provided [here](https://www.microsoft.com/store/apps/9pjn388hp8c9) for convenience.
+1. Open the Microsoft Store and choose Ubuntu 18.04. The link to Ubuntu 18.04 is provided [here](https://www.microsoft.com/en-us/p/ubuntu-1804-lts/9n9tngvndl3q) for convenience.
 
 2. Press `Get`
 
@@ -82,7 +82,7 @@ b) Under the `View` Tab, under the `Show/hide` heading,  Check the `Hidden Items
 
 ## Install ROS
 
-Installing ROS is mostly the same as the default instructions found [here](http://wiki.ros.org/kinetic/Installation/Ubuntu) with the exception of adding keys (step 2 below).
+Installing ROS is mostly the same as the default instructions found [here](http://wiki.ros.org/melodic/Installation/Ubuntu) with the exception of adding keys (step 2 below).
 
 1. Setup your computer to accept software from packages.ros.org. 
 
@@ -105,7 +105,8 @@ sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31
 As of the writing of this guide, this key is `C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654`, so replace `<INSERT KEY HERE>` with the key so that it looks like the following:
 
 ```bash
-curl -sL "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xC1CF6E31E6BADE8868B172B4F42ED6FBAB17C654"  | sudo apt-key add
+curl -sSL 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xC1CF6E31E6BADE8868B172B4F42ED6FBAB17C654' | sudo apt-key add -
+
 ```
 
 3. Update the list of repositories, install the full version of ROS Kinetic, and setup `rosdep` for installing system dependencies:
@@ -154,14 +155,20 @@ source ~/.bashrc
 
 1. Install the turtlebot and its related packages
 ```bash
-sudo apt install ros-kinetic-turtlebot
-sudo apt install ros-kinetic-turtlebot-* # This will install all packages, you may only need a subset of these packages depending on what you are doing.
+sudo apt install ros-melodic-turtlebot3*
 source ~/.bashrc
 ```
 
-2. Bring up Turtlebot in stage to check everything is working.
+2. Bring up Turtlebot 3 in Gazebo to check everything is working.
 ```bash
-roslaunch turtlebot_stage turtlebot_in_stage.launch
+export TURTLEBOT3_GAZEBO=waffle
+roslaunch turtlebot3_gazebo turtlebot3_simulation.launch
 ```
 
-3. You should be able to drive the Turtlebot around using 2D nav goals through the RViz interface.
+and in a new terminal:
+```bash
+export TURTLEBOT3_GAZEBO=waffle
+roslaunch turtlebot3_fake turtlebot3_fake.launch
+```
+
+3. You should see the turtlebot moving about in some capacity in Rviz and Gazebo
