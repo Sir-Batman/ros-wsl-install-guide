@@ -4,10 +4,10 @@ By Scott Chow
 
 Last Updated: August 31, 2019
 
-This guide takes you through the installation process of Ubuntu 18.04 and ROS Kinetic on Windows 10 using Windows Subsystem for Linux.
+This guide takes you through the installation process of Ubuntu 18.04 and ROS Melodic on Windows 10 using Windows Subsystem for Linux.
 
 Overall guide based heavily on the tutorial found [here](https://janbernloehr.de/2017/06/10/ros-windows).
-Adapted and tested for Ubuntu 18.04 and ROS Kinetic running on Windows 10.
+Adapted and tested for Ubuntu 18.04 and ROS Melodic running on Windows 10.
 
 ---
 
@@ -96,7 +96,7 @@ curl -sL "http://keyserver.ubuntu.com/pks/lookup?op=get&search=0x<INSERT KEY HER
 
 ```
 
-To get the key, go to the installation guide [here](http://wiki.ros.org/kinetic/Installation/Ubuntu) and Look at the Set up your keys step. You should see something like:
+To get the key, go to the installation guide [here](http://wiki.ros.org/melodic/Installation/Ubuntu) and Look at the Set up your keys step. You should see something like:
 
 ```bash
 sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
@@ -109,24 +109,24 @@ curl -sSL 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xC1CF6E31E6BADE
 
 ```
 
-3. Update the list of repositories, install the full version of ROS Kinetic, and setup `rosdep` for installing system dependencies:
+3. Update the list of repositories, install the full version of ROS Melodic, and setup `rosdep` for installing system dependencies:
 ```bash
 sudo apt update
-sudo apt install -y ros-kinetic-desktop-full
+sudo apt install -y ros-melodic-desktop-full
 sudo rosdep init
 rosdep update
 ```
 
-4. Source ROS Kinetic so that it can be accessed in this window:
+4. Source ROS Melodic so that it can be accessed in this window:
 
 ```bash
-source /opt/ros/kinetic/setup.bash
+source /opt/ros/melodic/setup.bash
 ```
 
 Note: you will have to run this command every new window you create. If you want this command to be run automatically, add it to your `.bashrc` file with the following line:
 
 ```bash
-echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
+echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
 source ~/.bashrc
 ```
 
